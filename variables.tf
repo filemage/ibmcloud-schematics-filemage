@@ -34,7 +34,7 @@ variable "vsi_security_group" {
 
 variable "public_image_name" {
   type    = string
-  default = "filemage-ibm-1-5-13"
+  default = "filemage-ibm-1-5-12"
 }
 
 variable "custom_image_name" {

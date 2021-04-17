@@ -1,13 +1,13 @@
 locals {
   public_image_map = {
-    filemage-ibm-1-5-13 = {
-      "au-syd" = "r026-58e10faf-ef70-4b46-9372-9e1d82b14237"
-      "eu-de" = "r010-81f3f0d0-1643-4e79-a4fb-e3c7473a32b3"
-      "eu-gb" = "r018-53708df0-739e-40ae-93d8-0a3809a2fe09"
-      "jp-osa" = "r034-eb4d46b6-3160-4311-ba91-3ed4656b8dc4"
-      "jp-tok" = "r022-d08a6d71-d151-41c8-be8e-ebba6879e236"
-      "us-east" = "r014-cf0cd75a-e2e9-4558-8180-adcabd05d9a5"
-      "us-south" = "r006-3ff803bd-2fc9-4643-bf82-180e6785d1fd"
+    filemage-ibm-1-5-12 = {
+      "au-syd"   = "r026-70896c4a-b383-423d-91e0-b6324f85c673"
+      "eu-de"    = "r010-ed8684fc-cfef-4671-a5d0-949a15c86204"
+      "eu-gb"    = "r018-e43d45c7-1429-41f0-a802-b774c5dcbc5b"
+      "jp-osa"   = "r034-0ece10a4-e536-4579-b541-d1cbff39668a"
+      "jp-tok"   = "r022-023eecc5-a748-4210-af53-504115ddd396"
+      "us-east"  = "r014-5e5df6f4-e5af-406b-b183-2ac82ab91910"
+      "us-south" = "r006-28c45bc6-e306-4112-98bb-45f4ec11ea16"
     }
   }
 
