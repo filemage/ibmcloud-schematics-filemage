@@ -1,36 +1,53 @@
 # FileMage Gateway Instance Creation using Catalog image
 
-This directory contains a Terraform module to create an FileMage Gateway instances using catalog input from the user.
+FileMage Gateway is an FTP and SFTP server backed by IBM Cloud Object Storage. Files transfers are streamed in-memory without writing to disk and changes are visible in real-time. Additional features include permission management and automatic TLS certificate management using Let's Encrypt.
 
-## Prerequisites
+This directory contains the Terraform module to create FileMage Gateway instances using catalog input from the user.
 
-- Have access to [Gen 2 VPC](https://cloud.ibm.com/vpc-ext/).
-- Have at least one subnet
+Use this template to create FileMage Gateway instances using catalog image from your IBM Cloud account in IBM Cloud [VPC Gen2](https://cloud.ibm.com/vpc-ext/overview) by using Terraform or IBM Cloud Schematics.  Schematics uses Terraform as the infrastructure-as-code engine.  With this template, you can create and manage infrastructure as a single unit as follows. For more information about how to use this template, see the IBM Cloud [Schematics documentation](https://cloud.ibm.com/docs/schematics).
 
-The following regions are supported:
 
-- us-south
-- us-east
-- eu-de
-- eu-gb
-- jp-tok
-- jp-osa
-- au-syd
+## Before you begin
 
-### Required values
+Before you can apply the template in IBM Cloud, complete the following steps.
 
-| Key | Definition | Example |
-| --- | ---------- | ------------- |
-| `region` | The VPC region that you want your virtual server instance to be provisioned in. | us-south |
-| `ssh_key_name` | The name of the SSH key to be used. See [Public SSH Key Doc](https://cloud.ibm.com/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-ssh-keys). | linux-ssh-key |
-| `subnet_id` | The ID of the subnet you want the virtual server instance to be provisioned in. | 0717-xxxxxx-xxxx-xxxxx-8110-xxxxx |
-| `vsi_instance_name` | The name of the virtual server instance to be provisioned. | filemage-vm |
-| `vsi_profile` | The profile of compute CPU and memory resources to be used when provisioning. | cx2-4x8 |
-| `vsi_security_group` | The name of the security group to be provisioned. | filemage-sg |
-| `public_image_name` | The name of image to be provisioned. | filemage-ibm-1-5-13 |
+Ensure that you have the following permissions in IBM Cloud Identity and Access Management:
+* `Manager` service access role for IBM Cloud Schematics
+* `Operator` platform role for VPC Infrastructure
 
-### Optional values
 
-| Key | Definition | Value Example |
-| --- | ---------- | ------------- |
-| `custom_image_name` | Use a custom image instead of the provided public images. | custom-filemage-image |
+## Required resources
+
+Ensure the following resources exist in your VPC Gen 2 environment.
+* VPC
+* SSH Key
+* VPC with at least one subnet
+
+
+## Installing the software
+
+The FileMage Gateway image name can reference the name of a custom image in your region or the public images available on IBM cloud.
+
+The FileMage Gateway images available on IBM Cloud are:
+
+* filemage-ibm-1-5-12
+
+They are supported in the following regions:
+
+* us-south
+* us-east
+* eu-de
+* eu-gb
+* jp-tok
+* jp-osa
+* au-syd
+
+
+## Upgrading to a new version
+
+When an update is available, you will be notified on the settings page. To update, SSH to your virtual server instance and run `filemage update`.
+
+
+## Getting support
+
+This product is provided and supported by [FileMage](https://www.filemage.io/). If you encounter any issues that require opening a support case email us at [filemage@support.com](mailto:filemage@support.com)
