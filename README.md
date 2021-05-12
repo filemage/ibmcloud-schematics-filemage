@@ -1,6 +1,6 @@
 # FileMage Gateway Instance Creation using Catalog image
 
-FileMage Gateway is an FTP and SFTP server backed by IBM Cloud Object Storage. Files transfers are streamed in-memory without writing to disk and changes are visible in real-time. Additional features include permission management and automatic TLS certificate management using Let's Encrypt.
+FileMage Gateway is an FTP and SFTP server backed by IBM Cloud Object Storage. File transfers are streamed in-memory without writing to disk and changes are visible in real-time. Additional features include permission management and automatic TLS certificate management using Let's Encrypt.
 
 This directory contains the Terraform module to create FileMage Gateway instances using catalog input from the user.
 
@@ -50,4 +50,4 @@ When an update is available, you will be notified on the settings page. To updat
 
 ## Getting support
 
-This product is provided and supported by [FileMage](https://www.filemage.io/). If you encounter any issues that require opening a support case email us at [filemage@support.com](mailto:filemage@support.com)
+This product is provided and supported by [FileMage](https://www.filemage.io/). If you encounter any issues that require opening a support case email us at [support@filemage.io](mailto:support@filemage.io). FileMage support is provided in English, during the hours 7am - 7pm Pacific time, Monday through Friday.
