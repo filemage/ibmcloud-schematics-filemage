@@ -13,3 +13,10 @@ resource "ibm_is_instance" "vsi_instance" {
   zone = data.ibm_is_subnet.vsi_subnet.zone
   keys = [data.ibm_is_ssh_key.vsi_ssh_pub_key.id]
 }
+
+resource "ibm_is_floating_ip" "vsi_floating_ip" {
+  count = var.create_floating_ip == true ? 1 : 0
+
+  name   = "${var.vsi_instance_name}-ip"
+  target = ibm_is_instance.vsi_instance.primary_network_interface[0].id
+}

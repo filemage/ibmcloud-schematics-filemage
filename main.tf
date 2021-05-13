@@ -1,13 +1,13 @@
 terraform {
   required_providers {
     ibm = {
-      source = "IBM-Cloud/ibm"
+      source  = "IBM-Cloud/ibm"
+      version = "~> 1.12.0"
     }
   }
 }
 
 provider "ibm" {
-  generation       = 2
   region           = var.region
   ibmcloud_timeout = 300
 }
@@ -30,4 +30,8 @@ data "ibm_is_instance_profile" "vsi_profile" {
 
 data "ibm_is_image" "custom_image" {
   name = var.custom_image_name
+}
+
+output "vsi_instance_address" {
+  value = var.create_floating_ip == true ? ibm_is_floating_ip.vsi_floating_ip[0].address : ibm_is_instance.vsi_instance.primary_network_interface[0].primary_ipv4_address
 }

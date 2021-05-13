@@ -4,7 +4,7 @@ variable "TF_VERSION" {
 }
 
 variable "region" {
-  type    = string
+  type        = string
   description = "The region in which the VPC instance is located. Required for users to specify."
 }
 
@@ -14,12 +14,12 @@ variable "ssh_key_name" {
 }
 
 variable "subnet_id" {
-  type = string
+  type        = string
   description = "The ID of the subnet within the VPC that the virtual server instance uses. Required for users to specify."
 }
 
 variable "vsi_instance_name" {
-  type = string
+  type        = string
   description = "The name of the virtual server instance. Required for users to specify."
 }
 
@@ -32,12 +32,20 @@ variable "vsi_security_group" {
   description = "The name of the security group that is created. Required for users to specify."
 }
 
+variable "create_floating_ip" {
+  type        = bool
+  default     = false
+  description = "Optionally create and attach a floating public IP."
+}
+
 variable "public_image_name" {
   type    = string
-  default = "filemage-ibm-1-5-12"
+  default = "filemage-ibm-1-5-13"
+  description = "The public image provided by FileMage to use."
 }
 
 variable "custom_image_name" {
-  type = string
-  default = ""
+  type        = string
+  description = "Optionally provide a custom image to use instead of default public image."
+  default     = ""
 }
