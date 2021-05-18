@@ -69,3 +69,11 @@ When an update is available, you will be notified on the settings page. To updat
 ## Getting support
 
 This product is provided and supported by [FileMage](https://www.filemage.io/). If you encounter any issues that require opening a support case email us at [support@filemage.io](mailto:support@filemage.io). FileMage support is provided in English, during the hours 7am - 7pm Pacific time, Monday through Friday.
+
+### Support site URL
+
+https://www.filemage.io/support/
+
+### Support Location. 
+ 
+United States
