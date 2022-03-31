@@ -15,12 +15,12 @@ variable "ssh_key_name" {
 
 variable "subnet_id" {
   type        = string
-  description = "The ID of the subnet within the VPC that the virtual server instance uses. Required for users to specify."
+  description = "The ID of the subnet within the VPC that the virtual server instance will use. Required for users to specify."
 }
 
 variable "vsi_instance_name" {
   type        = string
-  description = "The name of the virtual server instance. Required for users to specify."
+  description = "The name of the virtual server instance that will be created. Required for users to specify."
 }
 
 variable "vsi_profile" {
@@ -34,7 +34,7 @@ variable "vsi_security_group" {
 
 variable "create_floating_ip" {
   type        = bool
-  default     = false
+  default     = true
   description = "Optionally create and attach a floating public IP."
 }
 
