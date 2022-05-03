@@ -1,11 +1,24 @@
 variable "TF_VERSION" {
-  default     = "0.13"
+  default     = "1.0"
   description = "The version of the Terraform engine that's used in the Schematics workspace."
 }
 
 variable "region" {
   type        = string
-  description = "The region in which the VPC instance is located. Required for users to specify."
+  description = "The region in which the VPC instance is located. Required for users to specify. Must be one of 'au-syd', 'eu-de', 'eu-gb', 'jp-osa', 'jp-tok', 'us-east' or 'us-south'"
+  validation {
+    condition = contains([
+      "au-syd",
+      "eu-de",
+      "eu-gb",
+      "jp-osa",
+      "jp-tok",
+      "us-east",
+      "us-south"
+      ],
+    var.region)
+    error_message = "Invalid region selected."
+  }
 }
 
 variable "ssh_key_name" {
@@ -35,12 +48,12 @@ variable "vsi_security_group" {
 variable "create_floating_ip" {
   type        = bool
   default     = true
-  description = "Optionally create and attach a floating public IP."
+  description = "Create and attach a floating public IP."
 }
 
 variable "public_image_name" {
-  type    = string
-  default = "filemage-ibm-1-5-13"
+  type        = string
+  default     = "filemage-ibm-1-9-2"
   description = "The public image provided by FileMage to use."
 }
 

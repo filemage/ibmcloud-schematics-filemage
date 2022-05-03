@@ -18,6 +18,15 @@ locals {
       "us-east"  = "r014-77f09fb0-14d0-4364-8677-5ff0e545c6e5"
       "us-south" = "r006-15f99ca6-1187-45c0-a2cb-90a33ee2dcc0"
     }
+    filemage-ibm-1-9-2 = {
+      "au-syd"   = "r026-0800f180-7b1d-46e5-ad5c-d53f00366cfa"
+      "eu-de"    = "r010-eaf7d557-307f-461d-92ce-addbda4b6ff3"
+      "eu-gb"    = "r018-f6fb3128-dcdc-4bda-9f00-ba50185b3245"
+      "jp-osa"   = "r034-d84b1905-3aee-49f3-b97e-268395be8b33"
+      "jp-tok"   = "r022-65ca5ee8-1cb3-41c7-b4cd-36e7c7011050"
+      "us-east"  = "r014-264e6ad6-56dc-4e90-835e-247bbb56352f"
+      "us-south" = "r006-8c0367c3-e530-4273-a946-82213a8f7941"
+    }
   }
 
   public_image_id = lookup(local.public_image_map[var.public_image_name], var.region)
