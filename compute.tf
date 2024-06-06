@@ -9,6 +9,12 @@ resource "ibm_is_instance" "vsi_instance" {
     security_groups = [ibm_is_security_group.vsi_security_group.id]
   }
 
+  metadata_service {
+    enabled = true
+    protocol = "https"
+    response_hop_limit = 5
+  }
+
   vpc  = data.ibm_is_subnet.vsi_subnet.vpc
   zone = data.ibm_is_subnet.vsi_subnet.zone
   keys = [data.ibm_is_ssh_key.vsi_ssh_pub_key.id]
